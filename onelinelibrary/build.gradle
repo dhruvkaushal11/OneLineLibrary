@@ -1,0 +1,106 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='onelinelibrary.com.onelinelibrary'
+version='1.0.0'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.squareup.okhttp3:okhttp:3.4.2'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:1.6.+'
+    compile 'com.android.support:recyclerview-v7:22.2.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:cardview-v7:22.2.1'
+    compile 'com.android.support:appcompat-v7:22.0.1'
+
+    compile 'com.android.support:design:22.2.0'
+    testCompile "org.robolectric:robolectric:3.0"
+
+}
+
+
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+task generateJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath()
+            .join(File.pathSeparator))
+}
+
+task generateJavadocsJar(type: Jar) {
+    from generateJavadocs.destinationDir
+    classifier 'javadoc'
+}
+
+generateJavadocsJar.dependsOn generateJavadocs
+
+artifacts {
+    archives generateJavadocsJar
+    archives generateSourcesJar
+}
+
+task createPom {
+    pom {
+        project {
+            groupId 'onelinelibrary.com.onelinelibrary'
+
+            version '1.0.0'
+
+            inceptionYear '2016'
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+        }
+    }.writeTo("pom.xml")
+}
+
+bintray {
+    user = 'subhamgupta'
+    key = '32a8004348deab3a3fcb2a4cc498dc13c0fe8a31'
+    pkg {
+        repo = 'oneLineLibrary'
+        name = 'onelinelibrary.com.onelinelibrary' // the name of the package in BinTray
+
+        version {
+            name = 'oneLineLibrary' // the name of your library project
+            desc = 'This is the first version'
+            released  = new Date()
+            vcsTag = '1.0.0' // the version
+        }
+
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/subhamG98' // your GitHub repo
+        websiteUrl = 'http://guptasubham.blogspot.in/' // your website or whatever has documentation
+    }
+    configurations = ['archives']
+}
