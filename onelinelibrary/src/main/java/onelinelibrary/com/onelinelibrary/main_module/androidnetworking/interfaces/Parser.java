@@ -25,9 +25,7 @@ import java.lang.reflect.Type;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 
-/**
- * Created by amitshekhar on 31/07/16.
- */
+
 public interface Parser<F, T> {
 
     T convert(F value) throws IOException;

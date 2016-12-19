@@ -10,15 +10,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-      <!--  <activity android:name=".MainActivity"
+        <activity android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>-->
-        <activity android:name=".Trains"
+        </activity>
+        <!--<activity android:name=".Trains"
             android:label="Metro Train Prototype"
             android:icon="@drawable/logo"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -37,7 +37,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
+-->
     </application>
 
 </manifest>

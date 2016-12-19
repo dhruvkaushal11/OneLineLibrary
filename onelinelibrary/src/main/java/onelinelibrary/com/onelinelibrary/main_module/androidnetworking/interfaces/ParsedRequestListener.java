@@ -21,9 +21,7 @@ package onelinelibrary.com.onelinelibrary.main_module.androidnetworking.interfac
 
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.error.ANError;
 
-/**
- * Created by amitshekhar on 31/07/16.
- */
+
 public interface ParsedRequestListener<T> {
 
     void onResponse(T response);

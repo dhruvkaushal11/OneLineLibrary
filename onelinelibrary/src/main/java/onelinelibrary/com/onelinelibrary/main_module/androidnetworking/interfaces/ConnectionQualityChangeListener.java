@@ -19,9 +19,6 @@ package onelinelibrary.com.onelinelibrary.main_module.androidnetworking.interfac
 
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ConnectionQuality;
 
-/**
- * Created by amitshekhar on 29/05/16.
- */
 public interface ConnectionQualityChangeListener {
 
     void onChange(ConnectionQuality currentConnectionQuality, int currentBandwidth);

@@ -142,7 +142,7 @@ public class MainActivity extends ActionBarActivity {
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
-                        public void onResponse(JSONObject response) {
+                        public void onResponse(String response) {
                         // do anything with response
                         Log.d(TAG,"POST_OUTPUT1"+response);
                     }

@@ -25,9 +25,6 @@ import org.json.JSONObject;
 
 import okhttp3.Response;
 
-/**
- * Created by amitshekhar on 23/05/16.
- */
 public interface OkHttpResponseAndJSONObjectRequestListener {
 
     void onResponse(Response okHttpResponse, JSONObject response);

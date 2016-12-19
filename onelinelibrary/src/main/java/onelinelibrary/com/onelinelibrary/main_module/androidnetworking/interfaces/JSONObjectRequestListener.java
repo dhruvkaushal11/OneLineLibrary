@@ -21,9 +21,7 @@ import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.error.ANE
 
 import org.json.JSONObject;
 
-/**
- * Created by amitshekhar on 23/05/16.
- */
+
 public interface JSONObjectRequestListener {
 
     void onResponse(JSONObject response);

@@ -23,9 +23,7 @@ import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.error.ANE
 
 import okhttp3.Response;
 
-/**
- * Created by amitshekhar on 31/07/16.
- */
+
 public interface OkHttpResponseAndParsedRequestListener<T> {
 
     void onResponse(Response okHttpResponse, T response);

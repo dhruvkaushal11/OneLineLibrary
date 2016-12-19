@@ -17,9 +17,7 @@
 
 package onelinelibrary.com.onelinelibrary.main_module.androidnetworking.interfaces;
 
-/**
- * Created by Dhruv on 31/11/16.
- */
+
 public interface progressListner {
 
     void onReceived(long timeTakenInMillis, long bytesSent, long bytesReceived, boolean isFromCache);

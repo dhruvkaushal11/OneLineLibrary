@@ -25,9 +25,7 @@ import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.error.ANE
 
 import okhttp3.Response;
 
-/**
- * Created by amitshekhar on 23/05/16.
- */
+
 public interface OkHttpResponseAndBitmapRequestListener {
 
     void onResponse(Response okHttpResponse, Bitmap response);
