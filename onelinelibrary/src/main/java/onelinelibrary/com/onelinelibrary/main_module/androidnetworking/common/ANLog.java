@@ -19,9 +19,7 @@ package onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common;
 
 import android.util.Log;
 
-/**
- * Created by amitshekhar on 01/06/16.
- */
+
 public class ANLog {
 
     private static boolean IS_LOGGING_ENABLED = false;
@@ -29,21 +27,6 @@ public class ANLog {
 
     private ANLog() {
 
-    }
-
-    public static void enableLogging() {
-        IS_LOGGING_ENABLED = true;
-    }
-
-    public static void disableLogging() {
-        IS_LOGGING_ENABLED = false;
-    }
-
-    public static void setTag(String tag) {
-        if (tag == null) {
-            return;
-        }
-        TAG = tag;
     }
 
     public static void d(String message) {

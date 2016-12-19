@@ -27,9 +27,7 @@ import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.model.Pro
 
 import java.lang.ref.WeakReference;
 
-/**
- * Created by amitshekhar on 24/05/16.
- */
+
 public class UploadProgressHandler extends Handler {
 
     private final WeakReference<UploadProgressListener> mUploadProgressListenerWeakRef;

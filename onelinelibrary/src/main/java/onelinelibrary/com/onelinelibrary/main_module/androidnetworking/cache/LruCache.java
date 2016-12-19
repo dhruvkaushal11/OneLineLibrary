@@ -22,9 +22,7 @@ import android.annotation.SuppressLint;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * Created by amitshekhar on 28/05/16.
- */
+
 public class LruCache<K, V> {
     private final LinkedHashMap<K, V> map;
 
@@ -191,30 +189,6 @@ public class LruCache<K, V> {
 
     public synchronized final int size() {
         return size;
-    }
-
-    public synchronized final int maxSize() {
-        return maxSize;
-    }
-
-    public synchronized final int hitCount() {
-        return hitCount;
-    }
-
-    public synchronized final int missCount() {
-        return missCount;
-    }
-
-    public synchronized final int createCount() {
-        return createCount;
-    }
-
-    public synchronized final int putCount() {
-        return putCount;
-    }
-
-    public synchronized final int evictionCount() {
-        return evictionCount;
     }
 
     public synchronized final Map<K, V> snapshot() {

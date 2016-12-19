@@ -21,9 +21,7 @@ import android.graphics.Bitmap;
 
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.internal.ANImageLoader;
 
-/**
- * Created by amitshekhar on 24/03/16.
- */
+
 public class LruBitmapCache extends LruCache<String, Bitmap>
         implements ANImageLoader.ImageCache {
 

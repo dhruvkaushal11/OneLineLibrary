@@ -17,9 +17,7 @@
 
 package onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common;
 
-/**
- * Created by amitshekhar on 26/03/16.
- */
+
 public interface Method {
     int GET = 0;
     int POST = 1;

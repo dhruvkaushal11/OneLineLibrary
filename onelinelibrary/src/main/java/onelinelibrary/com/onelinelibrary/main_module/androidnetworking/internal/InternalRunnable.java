@@ -32,10 +32,6 @@ import okhttp3.Response;
 import static onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.RequestType.DOWNLOAD;
 import static onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.RequestType.MULTIPART;
 import static onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.RequestType.SIMPLE;
-
-/**
- * Created by amitshekhar on 22/03/16.
- */
 public class InternalRunnable implements Runnable {
 
     private final Priority priority;

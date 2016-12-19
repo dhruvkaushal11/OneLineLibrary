@@ -26,9 +26,7 @@ import android.widget.ImageView;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.error.ANError;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.internal.ANImageLoader;
 
-/**
- * Created by amitshekhar on 23/03/16.
- */
+
 public class ANImageView extends ImageView {
 
     private String mUrl;

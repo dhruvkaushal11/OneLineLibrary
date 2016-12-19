@@ -23,9 +23,6 @@ import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.gsonparse
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.interfaces.Parser;
 import com.google.gson.Gson;
 
-/**
- * Created by amitshekhar on 15/09/16.
- */
 public class ParseUtil {
 
     private static onelinelibrary.com.onelinelibrary.main_module.androidnetworking.interfaces.Parser.Factory mParserFactory;

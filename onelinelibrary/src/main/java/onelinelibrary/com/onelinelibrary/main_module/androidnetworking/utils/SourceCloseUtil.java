@@ -25,9 +25,7 @@ import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.Re
 
 import okhttp3.Response;
 
-/**
- * Created by amitshekhar on 15/09/16.
- */
+
 public final class SourceCloseUtil {
 
     private SourceCloseUtil() {

@@ -17,9 +17,6 @@
 
 package onelinelibrary.com.onelinelibrary.main_module.androidnetworking.internal;
 
-/**
- * Created by amitshekhar on 22/03/16.
- */
 
 import android.content.Context;
 import android.net.TrafficStats;

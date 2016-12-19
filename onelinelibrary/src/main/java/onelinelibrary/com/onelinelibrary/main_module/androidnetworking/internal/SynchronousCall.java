@@ -33,9 +33,7 @@ import static onelinelibrary.com.onelinelibrary.main_module.androidnetworking.co
 import static onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.RequestType.MULTIPART;
 import static onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.RequestType.SIMPLE;
 
-/**
- * Created by amitshekhar on 14/09/16.
- */
+
 @SuppressWarnings("unchecked")
 public final class SynchronousCall {
 

@@ -21,9 +21,6 @@ import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.error.ANE
 
 import okhttp3.Response;
 
-/**
- * Created by amitshekhar on 22/03/16.
- */
 public class ANResponse<T> {
 
     private final T mResult;

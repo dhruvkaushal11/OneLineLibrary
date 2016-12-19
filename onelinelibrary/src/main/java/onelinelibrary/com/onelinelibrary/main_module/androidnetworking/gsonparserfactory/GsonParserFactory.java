@@ -29,9 +29,6 @@ import java.lang.reflect.Type;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 
-/**
- * Created by amitshekhar on 31/07/16.
- */
 public final class GsonParserFactory extends Parser.Factory {
 
     private final Gson gson;
