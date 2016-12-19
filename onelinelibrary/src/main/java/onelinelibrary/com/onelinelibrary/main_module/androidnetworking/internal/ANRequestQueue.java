@@ -18,7 +18,7 @@
 package onelinelibrary.com.onelinelibrary.main_module.androidnetworking.internal;
 
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANLog;
-import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANRequest;
+import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.OneLineRequest;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.Priority;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.core.Core;
 
@@ -33,7 +33,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ANRequestQueue {
 
     private final static String TAG = ANRequestQueue.class.getSimpleName();
-    private final Set<ANRequest> mCurrentRequests = new HashSet<>();
+    private final Set<OneLineRequest> mCurrentRequests = new HashSet<>();
     private AtomicInteger mSequenceGenerator = new AtomicInteger();
     private static ANRequestQueue sInstance = null;
 
@@ -53,15 +53,15 @@ public class ANRequestQueue {
     }
 
     public interface RequestFilter {
-        boolean apply(ANRequest request);
+        boolean apply(OneLineRequest request);
     }
 
 
     private void cancel(RequestFilter filter, boolean forceCancel) {
         synchronized (mCurrentRequests) {
             try {
-                for (Iterator<ANRequest> iterator = mCurrentRequests.iterator(); iterator.hasNext(); ) {
-                    ANRequest request = iterator.next();
+                for (Iterator<OneLineRequest> iterator = mCurrentRequests.iterator(); iterator.hasNext(); ) {
+                    OneLineRequest request = iterator.next();
                     if (filter.apply(request)) {
                         request.cancel(forceCancel);
                         if (request.isCanceled()) {
@@ -79,8 +79,8 @@ public class ANRequestQueue {
     public void cancelAll(boolean forceCancel) {
         synchronized (mCurrentRequests) {
             try {
-                for (Iterator<ANRequest> iterator = mCurrentRequests.iterator(); iterator.hasNext(); ) {
-                    ANRequest request = iterator.next();
+                for (Iterator<OneLineRequest> iterator = mCurrentRequests.iterator(); iterator.hasNext(); ) {
+                    OneLineRequest request = iterator.next();
                     request.cancel(forceCancel);
                     if (request.isCanceled()) {
                         request.destroy();
@@ -100,7 +100,7 @@ public class ANRequestQueue {
             }
             cancel(new RequestFilter() {
                 @Override
-                public boolean apply(ANRequest request) {
+                public boolean apply(OneLineRequest request) {
                     if (request.getTag() instanceof String && tag instanceof String) {
                         final String tempRequestTag = (String) request.getTag();
                         final String tempTag = (String) tag;
@@ -118,7 +118,7 @@ public class ANRequestQueue {
         return mSequenceGenerator.incrementAndGet();
     }
 
-    public ANRequest addRequest(ANRequest request) {
+    public OneLineRequest addRequest(OneLineRequest request) {
         synchronized (mCurrentRequests) {
             try {
                 mCurrentRequests.add(request);
@@ -146,7 +146,7 @@ public class ANRequestQueue {
         return request;
     }
 
-    public void finish(ANRequest request) {
+    public void finish(OneLineRequest request) {
         synchronized (mCurrentRequests) {
             try {
                 mCurrentRequests.remove(request);

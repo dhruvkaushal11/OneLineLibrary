@@ -69,9 +69,9 @@ import okio.Okio;
  * Created by Dhruv Kaushal on 26/04/16.
  */
 @SuppressWarnings({"unchecked", "unused"})
-public class ANRequest<T extends ANRequest> {
+public class OneLineRequest<T extends OneLineRequest> {
 
-    private final static String TAG = ANRequest.class.getSimpleName();
+    private final static String TAG = OneLineRequest.class.getSimpleName();
 
     private int mMethod;
     private Priority mPriority;
@@ -133,7 +133,7 @@ public class ANRequest<T extends ANRequest> {
     private String mUserAgent = null;
     private Type mType = null;
 
-    public ANRequest(GetRequestBuilder builder) {
+    public OneLineRequest(GetRequestBuilder builder) {
         this.mRequestType = RequestType.SIMPLE;
         this.mMethod = builder.mMethod;
         this.mPriority = builder.mPriority;
@@ -152,7 +152,7 @@ public class ANRequest<T extends ANRequest> {
         this.mUserAgent = builder.mUserAgent;
     }
 
-    public ANRequest(PostRequestBuilder builder) {
+    public OneLineRequest(PostRequestBuilder builder) {
         this.mRequestType = RequestType.SIMPLE;
         this.mMethod = builder.mMethod;
         this.mPriority = builder.mPriority;
@@ -177,7 +177,7 @@ public class ANRequest<T extends ANRequest> {
         }
     }
 
-    public ANRequest(DownloadBuilder builder) {
+    public OneLineRequest(DownloadBuilder builder) {
         this.mRequestType = RequestType.DOWNLOAD;
         this.mMethod = Method.GET;
         this.mPriority = builder.mPriority;
@@ -195,7 +195,7 @@ public class ANRequest<T extends ANRequest> {
         this.mUserAgent = builder.mUserAgent;
     }
 
-    public ANRequest(MultiPartBuilder builder) {
+    public OneLineRequest(MultiPartBuilder builder) {
         this.mRequestType = RequestType.MULTIPART;
         this.mMethod = Method.POST;
         this.mPriority = builder.mPriority;
@@ -984,8 +984,8 @@ public class ANRequest<T extends ANRequest> {
             return (T) this;
         }
 
-        public ANRequest start() {
-            return new ANRequest(this);
+        public OneLineRequest start() {
+            return new OneLineRequest(this);
         }
     }
 
@@ -1198,8 +1198,8 @@ public class ANRequest<T extends ANRequest> {
             return (T) this;
         }
 
-        public ANRequest build() {
-            return new ANRequest(this);
+        public OneLineRequest build() {
+            return new OneLineRequest(this);
         }
     }
 
@@ -1328,8 +1328,8 @@ public class ANRequest<T extends ANRequest> {
             return (T) this;
         }
 
-        public ANRequest build() {
-            return new ANRequest(this);
+        public OneLineRequest build() {
+            return new OneLineRequest(this);
         }
     }
 
@@ -1490,14 +1490,14 @@ public class ANRequest<T extends ANRequest> {
             return (T) this;
         }
 
-        public ANRequest start() {
-            return new ANRequest(this);
+        public OneLineRequest start() {
+            return new OneLineRequest(this);
         }
     }
 
     @Override
     public String toString() {
-        return "ANRequest{" +
+        return "OneLineRequest{" +
                 "sequenceNumber='" + sequenceNumber +
                 ", mMethod=" + mMethod +
                 ", mPriority=" + mPriority +

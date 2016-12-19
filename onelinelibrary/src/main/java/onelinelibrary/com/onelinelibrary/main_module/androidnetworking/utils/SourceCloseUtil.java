@@ -20,7 +20,7 @@
 package onelinelibrary.com.onelinelibrary.main_module.androidnetworking.utils;
 
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANLog;
-import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANRequest;
+import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.OneLineRequest;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ResponseType;
 
 import okhttp3.Response;
@@ -33,7 +33,7 @@ public final class SourceCloseUtil {
     private SourceCloseUtil() {
     }
 
-    public static void close(Response response, ANRequest request) {
+    public static void close(Response response, OneLineRequest request) {
         if (request.getResponseAs() != ResponseType.OK_HTTP_RESPONSE &&
                 response != null && response.body() != null &&
                 response.body().source() != null) {

@@ -20,7 +20,7 @@
 package onelinelibrary.com.onelinelibrary.main_module.androidnetworking.internal;
 
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANConstants;
-import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANRequest;
+import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.OneLineRequest;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANResponse;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ResponseType;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.error.ANError;
@@ -43,7 +43,7 @@ public final class SynchronousCall {
 
     }
 
-    public static <T> ANResponse<T> execute(ANRequest request) {
+    public static <T> ANResponse<T> execute(OneLineRequest request) {
         switch (request.getRequestType()) {
             case SIMPLE:
                 return executeSimpleRequest(request);
@@ -55,7 +55,7 @@ public final class SynchronousCall {
         return new ANResponse<>(new ANError());
     }
 
-    private static <T> ANResponse<T> executeSimpleRequest(ANRequest request) {
+    private static <T> ANResponse<T> executeSimpleRequest(OneLineRequest request) {
         Response okHttpResponse = null;
         try {
             okHttpResponse = InternalNetworking.performSimpleRequest(request);
@@ -86,7 +86,7 @@ public final class SynchronousCall {
         }
     }
 
-    private static <T> ANResponse<T> executeDownloadRequest(ANRequest request) {
+    private static <T> ANResponse<T> executeDownloadRequest(OneLineRequest request) {
         Response okHttpResponse;
         try {
             okHttpResponse = InternalNetworking.performDownloadRequest(request);
@@ -109,7 +109,7 @@ public final class SynchronousCall {
         }
     }
 
-    private static <T> ANResponse<T> executeUploadRequest(ANRequest request) {
+    private static <T> ANResponse<T> executeUploadRequest(OneLineRequest request) {
         Response okHttpResponse = null;
         try {
             okHttpResponse = InternalNetworking.performUploadRequest(request);

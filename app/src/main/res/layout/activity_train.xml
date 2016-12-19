@@ -57,59 +57,51 @@
         android:id="@+id/textView8"
         android:layout_marginBottom="5dp" />
 
-    <Button
-        android:text="Delhi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp"
-        android:id="@+id/button10"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:background="@android:color/background_light"
-        android:layout_marginRight="20dp"
-        android:layout_alignLeft="@+id/button11"
-        android:layout_alignStart="@+id/button11" />
-
-    <Button
-        android:text="Noida"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:id="@+id/button11"
-        android:layout_below="@+id/button10"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:background="@android:color/background_light"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/metro"
-        android:layout_below="@+id/button"
-        android:layout_alignLeft="@+id/button11"
-        android:layout_alignStart="@+id/button11"
         android:layout_marginTop="34dp"
         android:id="@+id/imageView2"
         android:layout_above="@+id/textView8"
         android:adjustViewBounds="false"
         android:scaleType="fitXY" />
 
+    <Spinner
+        android:layout_width="fill_parent"
+        android:id="@+id/spinner"
+        android:spinnerMode="dropdown"
+        android:padding="5dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/spinner3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="50dp" />
+
     <Button
-        android:text="Meerut"
+        android:text="Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:id="@+id/button"
-        android:background="@android:color/background_light"
-        android:layout_below="@+id/button11"
-        android:layout_alignLeft="@+id/button11"
-        android:layout_alignStart="@+id/button11"
-        android:layout_alignRight="@+id/button11"
-        android:layout_alignEnd="@+id/button11" />
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_toRightOf="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6"
+        android:layout_marginLeft="66dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginBottom="102dp"
+        android:id="@+id/button" />
 
+    <Spinner
+        android:layout_width="fill_parent"
+        android:id="@+id/spinner3"
+        android:spinnerMode="dropdown"
+        android:padding="5dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:layout_marginTop="18dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

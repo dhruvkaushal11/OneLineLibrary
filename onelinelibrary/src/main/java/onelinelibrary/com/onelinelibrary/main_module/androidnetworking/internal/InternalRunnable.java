@@ -18,7 +18,7 @@
 package onelinelibrary.com.onelinelibrary.main_module.androidnetworking.internal;
 
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANLog;
-import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANRequest;
+import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.OneLineRequest;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANResponse;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.Priority;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ResponseType;
@@ -40,9 +40,9 @@ public class InternalRunnable implements Runnable {
 
     private final Priority priority;
     public final int sequence;
-    public final ANRequest request;
+    public final OneLineRequest request;
 
-    public InternalRunnable(ANRequest request) {
+    public InternalRunnable(OneLineRequest request) {
         this.request = request;
         this.sequence = request.getSequenceNumber();
         this.priority = request.getPriority();
@@ -156,7 +156,7 @@ public class InternalRunnable implements Runnable {
         return priority;
     }
 
-    private void deliverError(final ANRequest request, final ANError anError) {
+    private void deliverError(final OneLineRequest request, final ANError anError) {
         Core.getInstance().getExecutorSupplier().forMainThreadTasks().execute(new Runnable() {
             public void run() {
                 request.deliverError(anError);

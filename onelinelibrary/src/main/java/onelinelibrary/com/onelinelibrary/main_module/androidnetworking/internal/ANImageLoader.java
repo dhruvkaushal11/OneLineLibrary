@@ -24,7 +24,7 @@ import android.widget.ImageView;
 
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.OneLineLibrary;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.cache.LruBitmapCache;
-import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANRequest;
+import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.OneLineRequest;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.error.ANError;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.interfaces.BitmapRequestListener;
 
@@ -170,7 +170,7 @@ public class ANImageLoader {
             return imageContainer;
         }
 
-        ANRequest newRequest = makeImageRequest(requestUrl, maxWidth, maxHeight, scaleType,
+        OneLineRequest newRequest = makeImageRequest(requestUrl, maxWidth, maxHeight, scaleType,
                 cacheKey);
 
         mInFlightRequests.put(cacheKey,
@@ -178,9 +178,9 @@ public class ANImageLoader {
         return imageContainer;
     }
 
-    protected ANRequest makeImageRequest(String requestUrl, int maxWidth, int maxHeight,
-                                         ImageView.ScaleType scaleType, final String cacheKey) {
-        ANRequest ANRequest = OneLineLibrary.load(requestUrl)
+    protected OneLineRequest makeImageRequest(String requestUrl, int maxWidth, int maxHeight,
+                                              ImageView.ScaleType scaleType, final String cacheKey) {
+        OneLineRequest ANRequest = OneLineLibrary.load(requestUrl)
                 .setTag("ImageRequestTag")
                 .setBitmapMaxHeight(maxHeight)
                 .setBitmapMaxWidth(maxWidth)
@@ -282,7 +282,7 @@ public class ANImageLoader {
 
     private class BatchedImageRequest {
 
-        private final ANRequest mRequest;
+        private final OneLineRequest mRequest;
 
         private Bitmap mResponseBitmap;
 
@@ -290,7 +290,7 @@ public class ANImageLoader {
 
         private final LinkedList<ImageContainer> mContainers = new LinkedList<ImageContainer>();
 
-        public BatchedImageRequest(ANRequest request, ImageContainer container) {
+        public BatchedImageRequest(OneLineRequest request, ImageContainer container) {
             mRequest = request;
             mContainers.add(container);
         }

@@ -25,7 +25,7 @@ import android.os.NetworkOnMainThreadException;
 import android.widget.ImageView;
 
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANConstants;
-import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANRequest;
+import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.OneLineRequest;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANResponse;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.core.Core;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.error.ANError;
@@ -218,7 +218,7 @@ public class Utils {
     }
 
 
-    public static ANError getErrorForServerResponse(ANError error, ANRequest request, int code) {
+    public static ANError getErrorForServerResponse(ANError error, OneLineRequest request, int code) {
         error = request.parseNetworkError(error);
         error.setErrorCode(code);
         error.setErrorDetail(ANConstants.RESPONSE_FROM_SERVER_ERROR);

@@ -25,7 +25,7 @@ import android.content.Context;
 import android.net.TrafficStats;
 
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANConstants;
-import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ANRequest;
+import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.OneLineRequest;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.common.ConnectionClassManager;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.error.ANError;
 import onelinelibrary.com.onelinelibrary.main_module.androidnetworking.utils.Utils;
@@ -58,7 +58,7 @@ public final class InternalNetworking {
 
     public static String sUserAgent = null;
 
-    public static Response performSimpleRequest(ANRequest request) throws ANError {
+    public static Response performSimpleRequest(OneLineRequest request) throws ANError {
         Request okHttpRequest;
         Response okHttpResponse;
         try {
@@ -137,7 +137,7 @@ public final class InternalNetworking {
         return okHttpResponse;
     }
 
-    public static Response performDownloadRequest(final ANRequest request) throws ANError {
+    public static Response performDownloadRequest(final OneLineRequest request) throws ANError {
         Request okHttpRequest;
         Response okHttpResponse;
         try {
@@ -211,7 +211,7 @@ public final class InternalNetworking {
     }
 
 
-    public static Response performUploadRequest(ANRequest request) throws ANError {
+    public static Response performUploadRequest(OneLineRequest request) throws ANError {
         Request okHttpRequest;
         Response okHttpResponse;
         try {
@@ -262,7 +262,7 @@ public final class InternalNetworking {
         return sHttpClient;
     }
 
-    public static void addHeadersToRequestBuilder(Request.Builder builder, ANRequest request) {
+    public static void addHeadersToRequestBuilder(Request.Builder builder, OneLineRequest request) {
         if (request.getUserAgent() != null) {
             builder.addHeader(ANConstants.USER_AGENT, request.getUserAgent());
         } else if (sUserAgent != null) {
